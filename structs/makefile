@@ -1,5 +1,6 @@
 .SILENT:
 # -*- Declaraciones -*-
+
 #Compilacion
 CC = gcc
 SRCCC = hello_structs_1.c 
@@ -10,17 +11,20 @@ LINKER = gcc
 SRCL = hello_structs_1.o
 BINL = hello_structs_1.exe
 
-#utilidades
-RM = rm -rf
+#Utilidades
+ifeq ($(OS), Windows_NT)
+	RM = rm -rf
+else
+	RM = rm -rf
+endif 
 
-# -*- Ejecucion -*-
-.PHONY: all all-before all-after clean run
+# -*- Ejecución -*-
+.PHONY : all all-before all-after clean run
 
 all: all-before $(OBJCC) $(BINL) clean all-after
 
-Clean:
+clean :
 	$(RM) $(OBJCC) $(BINL)
-
 $(OBJCC): $(GLOBALDEPS)
 	$(CC) -c $(SRCCC) -o $(OBJCC)
 
