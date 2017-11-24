@@ -15,12 +15,12 @@ int main(void){
 	z.im = 2;
 
 	complexi w;
-	z.re = 1;
-	z.im = 2;
+	w.re = 1;
+	w.im = 2;
 
 	complexi x;
-	z.re = 1;
-	z.im = 2;
+	x.re = 1;
+	x.im = 2;
 
 
 
